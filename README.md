@@ -15,7 +15,7 @@ java -jar migrator.jar -path=<path-to-root-dir> -recursive=<true/false> -version
 Parameter | Description
 --- | ---
 -path | root path of the solution
--version |  parameter for defining the destination path
+-version |  parameter for defining the new target framework (e.g.: v4.6.2)
 -recursive | optional: by default recursive is set to false, to prevent unwanted recursive descent
 
 ## Example
