@@ -21,5 +21,5 @@ Parameter | Description
 ## Example
 
 ```
-java -jar migrator.jar -path=C:/Worspace/Demo -recursive=true -version=v4.6.2
+java -jar migrator.jar -path="C:/Worspace/Demo" -recursive=true -version="v4.6.2"
 ```
