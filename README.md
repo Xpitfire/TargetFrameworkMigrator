@@ -1,5 +1,5 @@
 # TargetFrameworkMigrator
-Simple tool to migrate the target framework for Visual Studio Projects Solution wide.
+Simple tool to migrate Solution wide the target framework for Visual Studio C# Projects.
 
 ## Requirements
 [Java 8 or higher](https://java.com/en/download/)
