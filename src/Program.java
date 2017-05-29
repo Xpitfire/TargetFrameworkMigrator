@@ -49,10 +49,13 @@ public class Program {
             Map<String, String> paramMap = new HashMap<>();
 
             int idx = 0;
-
+            System.out.printf("Found %s parameters!\n", args.length);
             while (idx < args.length) {
                 String[] keyValue = args[idx].split("=");
-                if (keyValue.length < 2) continue;
+                if (keyValue.length != 2) {
+                    idx++;
+                    continue;
+                }
                 paramMap.put(keyValue[0], keyValue[1]);
                 idx++;
             }
@@ -111,6 +114,8 @@ public class Program {
 
         System.out.println(folder + ":");
         for (final File fileEntry : files) {
+            if (fileEntry.equals(folder)) return;
+
             if (fileEntry.isDirectory() && recursive) {
                 scanAndUpdateFiles(fileEntry);
             } else if (fileEntry.isFile()) {
@@ -151,7 +156,7 @@ public class Program {
         try {
 
             // This block configure the logger with handler and formatter
-            fh = new FileHandler(LOGGER_FILE_NAME);
+            fh = new FileHandler(LOGGER_FILE_NAME, true);
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter();
             fh.setFormatter(formatter);
